@@ -1,0 +1,18 @@
+{
+  "name": "codingberlin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createTransaction.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "iota-cli-app": "^1.0.8",
+    "iota-pm": "^1.2.0",
+    "iota.lib.js": "^0.4.7",
+    "mam.client.js": "git+ssh://git@github.com/iotaledger/mam.client.js.git"
+  }
+}
