@@ -17,24 +17,16 @@ function promptMessage() {
 function publish(message) {
     let payload = iota.utils.toTrytes(message);
     let mamMessage = Mam.create(mamState, payload);   // Create MAM Payload - STRING OF TRYTES
-        //console.log(message)
         mamState = mamMessage.state // Save new mamState
         
         console.log('Root: ', mamMessage.root)
-        console.log('Address: ', mamMessage.address)
-        
+        //console.log('Address: ', mamMessage.address)
         return Mam.attach(mamMessage.payload, mamMessage.address)
-        
-        // Fetch Stream Async to Test
-        //var resp = await Mam.fetch(message.root, 'public', null, console.log)
-        //console.log(resp)
 }
 
 (async () => {
-
   while(1) {
     let result = await promptMessage(); 
-    
     let transactions = await publish(result.message);
     console.dir(transactions);
   }

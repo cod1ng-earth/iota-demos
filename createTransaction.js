@@ -6,8 +6,8 @@ const iota = new IOTA({
     'provider': process.env.IRI_URL
 });
 const options = {};   
-
-iota.api.getNewAddress(process.env.CB_SEED, options, (error, address) => {
+const seed = process.env.CB_SEED;
+iota.api.getNewAddress(seed, options, (error, address) => {
     
     if (error) {
         console.error(error);
@@ -19,7 +19,7 @@ iota.api.getNewAddress(process.env.CB_SEED, options, (error, address) => {
     var transfer = [{
         address: address,
         value: 0,
-        message: iota.utils.toTrytes('hello world from coding berlin.'),
+        message: iota.utils.toTrytes('bingo from coding berlin!'),
         tag: 'CODIN9BERLIN' //iota.utils.toTrytes('codingberlin')
     }]
  
